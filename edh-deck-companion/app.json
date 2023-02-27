@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "edh-deck-companion",
+    "slug": "edh-deck-companion",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "edh-deck-companion"
+}
