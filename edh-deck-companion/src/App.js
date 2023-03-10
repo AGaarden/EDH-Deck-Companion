@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-paper';
+// import { Button } from 'react-native';
+// import Page from './deck/PageList';
 
 // Knapper og animationer
 // https://callstack.github.io/react-native-paper/docs/components/ActivityIndicator
@@ -14,22 +16,27 @@ import { Button } from 'react-native-paper';
 // Kort API
 // https://scryfall.com/docs/api/cards
 
+/*
+Card[name, amount, locations[]]
+Lists[name, cardList]
+*/
+
 export default function App() {
   const [currentPage, setCurrentPage] = useState(true);
   if(currentPage) {
     return (
-      <Page 
+      <Page
         text = "This is a front page"
       >
-        <Button 
-          mode = "text"
-          onPress = {() => setCurrentPage(false)}
-          buttonColor = "#841584"
-          textColor = "#FFFFFF"
-          accessibilityLabel = "Learn more about this purple button"
-        >
-          Testing new button
-        </Button>
+        <PaperButton
+        gotten = { currentPage }
+        set = { setCurrentPage }
+        />
+
+        {/* <ReactButton
+        gotten = { currentPage }
+        set = { setCurrentPage }
+        /> */}
       </Page>
     );
   }
@@ -38,15 +45,16 @@ export default function App() {
       <Page
         text = "This is not a front page"
       >
-        <Button 
-          mode = "text"
-          onPress = {() => setCurrentPage(true)}
-          buttonColor = "#841584"
-          textColor = "#FFFFFF"
-          accessibilityLabel = "Learn more about this purple button"
-        >
-          Testing another button
-        </Button>
+        <PaperButton
+        gotten = { currentPage }
+        set = { setCurrentPage }
+        />
+
+        {/* <ReactButton
+        gotten = { currentPage }
+        set = { setCurrentPage }
+        /> */}
+
       </Page>
     );
   }
@@ -61,6 +69,31 @@ export function Page({ text, children }) {
       {children}
       <StatusBar style="auto" />
     </View>
+  );
+}
+
+export function PaperButton({ gotten, set }) {
+  return (
+    <Button
+    mode = "text"
+    onPress = {() => set(!gotten)}
+    buttonColor = "#841584"
+    textColor = "#FFFFFF"
+    accessibilityLabel = "Learn more about this purple button"
+    >
+      Testing this button
+    </Button>
+  );
+}
+
+export function ReactButton({ gotten, set }) {
+  return (
+    <Button
+      onPress={() => set(!gotten)}
+      title="Learn More later"
+      color="#841584"
+      accessibilityLabel="Learn more about this purple button"
+    />
   );
 }
 
