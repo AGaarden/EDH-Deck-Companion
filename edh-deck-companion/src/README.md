@@ -11,15 +11,14 @@ src
 |-- deck
 |   |-- AddList.js      // Add card list to collection
 |   |-- EditList.js     // Edit an existing card list
-|   |-- List.js         // List logic and structure
 |   |-- PageColl.js     // Collection page
 |   |-- PageList.js     // Card list page
 |   `-- RebuildList.js  // Rebuild a deck from collection or other decks
 `-- utils
     |-- CacheScryfall.js    // Cache various things from Scryfall (so they don't get mad at me)
     |-- FetchScryfall.js    // Fetch various things from Scryfall
-    |-- readDeckForeign.js  // Read a deck from a file given outside the app
-    `-- readDeckNative.js   // Read a deck from a file made by the app
+    |-- List.js             // List logic and structure
+    `-- readDeckForeign.js  // Read a deck from a file given outside the app
 
 
 ```
